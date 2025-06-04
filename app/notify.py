@@ -70,6 +70,9 @@ def get_new_challenges() -> list:
         #"difficulty": "",
         #"type": "",
         "page_size": 20,
+    }, headers={
+        "Accept": "application/json",
+        "User-Agent": config.USER_AGENT,
     })
     if response.status_code != 200:
         raise Exception(f"Failed to fetch challenges: {response.status_code}")
@@ -89,6 +92,9 @@ def get_stats(userid: str) -> list:
         "ordering": "-solved_at",
         #"search": "",
         "user_id": userid,
+    }, headers={
+        "Accept": "application/json",
+        "User-Agent": config.USER_AGENT,
     })
     if response.status_code != 200:
         raise Exception(f"Failed to fetch stats: {response.status_code}")

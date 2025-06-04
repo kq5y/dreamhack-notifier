@@ -20,3 +20,5 @@ API_HOST = "https://dreamhack.io/api/v1"
 
 CHALLENGES_FILE = "challenges.json"
 STATS_FILE = "stats.json"
+
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0"
