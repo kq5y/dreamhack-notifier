@@ -16,7 +16,7 @@ TIMEZONE = os.getenv("TIMEZONE", "Asia/Tokyo")
 if not TIMEZONE:
     raise ValueError("TIMEZONE environment variable is not set.")
 
-API_HOST = "https://dreamhack.io/api/v1"
+API_HOST = "https://dreamhack.io/api/v1/wargame"
 
 CHALLENGES_FILE = "challenges.json"
 STATS_FILE = "stats.json"
