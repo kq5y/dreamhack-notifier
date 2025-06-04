@@ -18,6 +18,8 @@ docker run -d \
   -e CHECK_INTERVAL="60" \
   -e TARGET_USER_ID="xxxxxxx" \
   -e TIMEZONE="Asia/Tokyo" \
+  -v ./app/challenges.json:/app/challenges.json \
+  -v ./app/stats.json:/app/stats.json \
   dreamhack-notifier
 ```
 
