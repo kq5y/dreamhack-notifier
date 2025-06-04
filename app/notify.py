@@ -1,7 +1,7 @@
 import re
 import json
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 
 import requests
@@ -191,7 +191,7 @@ def main():
                     for entry in stats:
                         solved_at_utc = parse_entry_date(entry, "solved_at")
                         solved_at_local = solved_at_utc.astimezone(ZoneInfo(config.TIMEZONE)) if solved_at_utc else None
-                        if solved_at_local and solved_at_local.date() + 1 == now_date_local.date():
+                        if solved_at_local and (now_date_local - timedelta(days=1)).date() == solved_at_local.date():
                             solved_count += 1
                             earned_points += entry.get("earned_points", 0)
                     print(f"[INFO] Today's solved count: {solved_count}, Points: {earned_points}")
