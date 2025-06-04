@@ -178,7 +178,7 @@ def main():
             now_date_local = datetime.now(timezone.utc).astimezone(ZoneInfo(config.TIMEZONE))
             if not stats_updated or datetime.strptime(stats_updated, "%Y-%m-%d").date() < now_date_local.date():
                 print("[INFO] Checking stats...")
-                stats = get_stats(config.USER_ID)
+                stats = get_stats(config.TARGET_USER_ID)
                 if stats:
                     solved_count = 0
                     earned_points = 0
